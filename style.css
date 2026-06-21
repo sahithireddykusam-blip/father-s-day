@@ -40,10 +40,10 @@
 
 /* ── Reset ──────────────────────────────────────────────────────────────── */
 *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { font-size: 80%; }
 html,body { width:100%; height:100%; overflow:hidden;
   font-family:var(--f-sans); background:var(--hero-g1);
-  color:var(--ink); -webkit-font-smoothing:antialiased;
-  zoom: 0.8; }
+  color:var(--ink); -webkit-font-smoothing:antialiased; }
 img { display:block; max-width:100%; }
 button { cursor:pointer; border:none; background:none; font-family:inherit; }
 
@@ -337,17 +337,17 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; }
 .memory-layout {
   position:relative; z-index:2;
   display:flex; align-items:center; justify-content:center;
-  width:100%; max-width:1200px;
-  padding:76px 60px 36px;
+  width:100%; max-width:960px;
+  padding:60px 48px 28px;
   height:100%;
 }
 
 /* ── Polaroid Frame ─────────────────────────────────────────────────────── */
 .photo-frame {
   position:absolute;
-  width:415px; height:535px; max-width:80%;
+  width:332px; height:428px; max-width:80%;
   background:#FEFEFE;
-  padding:15px 15px 58px;
+  padding:12px 12px 46px;
   border-radius:2px;
   cursor:pointer; z-index:5;
   box-shadow:
@@ -402,13 +402,13 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; }
 /* ── Memory Card ────────────────────────────────────────────────────────── */
 .memory-card {
   position:absolute;
-  width:440px; max-width:82%;
+  width:352px; max-width:82%;
   background:var(--glass-bg);
   backdrop-filter:blur(28px) saturate(1.9);
   -webkit-backdrop-filter:blur(28px) saturate(1.9);
   border:1px solid var(--glass-bdr);
-  border-radius:24px;
-  padding:38px 36px 30px;
+  border-radius:20px;
+  padding:30px 28px 24px;
   z-index:4; opacity:0; visibility:hidden; pointer-events:none;
   transition:all .85s var(--ease-expo);
   box-shadow:0 4px 6px rgba(0,0,0,.04), 0 20px 44px rgba(58,46,46,.10);
@@ -684,8 +684,9 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; }
   .stat-num        { font-size:1.5rem; }
 
   .memory-layout {
-    flex-direction:column; padding:68px 20px 28px;
-    justify-content:center;
+    flex-direction:column; padding:20px;
+    justify-content:center; align-items:center;
+    gap:16px;
   }
   .photo-frame {
     position:relative; width:255px; height:344px;
@@ -697,23 +698,41 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; }
   .tap-hint { bottom:58px; font-size:.62rem; padding:6px 13px; }
 
   .memory-card {
-    position:absolute; width:88%; max-width:375px;
-    bottom:3vh; left:50%;
-    transform:translateX(-50%) translateY(18px);
-    padding:22px 18px; max-height:65vh; overflow-y:auto;
+    position:absolute; width:92%; max-width:375px;
+    bottom:auto; left:auto;
+    transform:none;
+    padding:20px; max-height:55vh; overflow-y:auto;
+    transition:all .5s var(--ease-expo);
   }
 
   .banner-section, #final-image {
-    background-position: top center !important;
+    background-size: contain !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
   }
 
+  /* When open on mobile: shrink image, put card in flex flow */
   [data-direction="left"].card-open  .photo-frame,
   [data-direction="right"].card-open .photo-frame {
-    transform:translateY(-17vh) scale(.84) rotate(0deg) !important; }
+    width:190px; height:256px;
+    padding:8px 8px 38px;
+    transform:rotate(0deg) !important; 
+  }
+  [data-direction="left"].card-open .photo-label,
+  [data-direction="right"].card-open .photo-label {
+    height:38px;
+  }
+  [data-direction="left"].card-open .label-script,
+  [data-direction="right"].card-open .label-script {
+    font-size:1.15rem;
+  }
+
   [data-direction="left"].card-open  .memory-card,
   [data-direction="right"].card-open .memory-card {
-    transform:translateX(-50%) translateY(0);
-    opacity:1; visibility:visible; pointer-events:auto; }
+    position:relative;
+    transform:none;
+    opacity:1; visibility:visible; pointer-events:auto; 
+  }
 
   .card-heading { font-size:1.25rem; }
   .card-text    { font-size:.84rem; line-height:1.6; }
@@ -731,10 +750,15 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; }
   .photo-label { height:44px; }
   .label-script { font-size:1.18rem; }
   .tap-hint { bottom:52px; font-size:.60rem; padding:5px 12px; }
-  .memory-card { padding:18px 15px; max-height:68vh; }
+  
   [data-direction="left"].card-open  .photo-frame,
   [data-direction="right"].card-open .photo-frame {
-    transform:translateY(-14vh) scale(.82) rotate(0deg) !important; }
+    width:170px; height:230px; padding:6px 6px 34px;
+  }
+
+  .memory-card { padding:16px 14px; max-height:58vh; }
+  .memory-layout { gap: 12px; }
+
   .intro-stats { gap:14px; }
   .stat-sep    { height:22px; }
   .intro-line-main { margin-top:14px; }
