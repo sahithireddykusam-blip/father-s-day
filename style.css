@@ -42,7 +42,8 @@
 *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
 html,body { width:100%; height:100%; overflow:hidden;
   font-family:var(--f-sans); background:var(--hero-g1);
-  color:var(--ink); -webkit-font-smoothing:antialiased; }
+  color:var(--ink); -webkit-font-smoothing:antialiased;
+  zoom: 0.8; }
 img { display:block; max-width:100%; }
 button { cursor:pointer; border:none; background:none; font-family:inherit; }
 
@@ -697,9 +698,13 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; }
 
   .memory-card {
     position:absolute; width:88%; max-width:375px;
-    bottom:4vh; left:50%;
+    bottom:3vh; left:50%;
     transform:translateX(-50%) translateY(18px);
-    padding:22px 18px; max-height:52vh; overflow-y:auto;
+    padding:22px 18px; max-height:65vh; overflow-y:auto;
+  }
+
+  .banner-section, #final-image {
+    background-position: top center !important;
   }
 
   [data-direction="left"].card-open  .photo-frame,
@@ -710,9 +715,9 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; }
     transform:translateX(-50%) translateY(0);
     opacity:1; visibility:visible; pointer-events:auto; }
 
-  .card-heading { font-size:1.3rem; }
-  .card-text    { font-size:.87rem; }
-  .card-text::first-letter { font-size:2.3rem; }
+  .card-heading { font-size:1.25rem; }
+  .card-text    { font-size:.84rem; line-height:1.6; }
+  .card-text::first-letter { font-size:2.1rem; }
 
   /* Final sections responsive */
   .final-title       { font-size:clamp(2.8rem,8vw,4.5rem); margin-top:18px; }
@@ -726,7 +731,7 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; }
   .photo-label { height:44px; }
   .label-script { font-size:1.18rem; }
   .tap-hint { bottom:52px; font-size:.60rem; padding:5px 12px; }
-  .memory-card { padding:18px 15px; }
+  .memory-card { padding:18px 15px; max-height:68vh; }
   [data-direction="left"].card-open  .photo-frame,
   [data-direction="right"].card-open .photo-frame {
     transform:translateY(-14vh) scale(.82) rotate(0deg) !important; }
