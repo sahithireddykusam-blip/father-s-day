@@ -708,14 +708,14 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; }
   }
 
   .banner-section, #final-image {
-    /* Hide the base background render so pseudo-elements can layer it correctly */
+    position: relative !important;
     background-size: 0 0 !important; 
     z-index: 1;
   }
   
   /* Blurred background layer */
   .banner-section::before, #final-image::before {
-    content: ''; position: absolute; inset: -10%; z-index: -2;
+    content: ''; position: absolute; inset: -10%; z-index: 1;
     background-image: inherit; 
     background-size: cover !important;
     background-position: center !important;
@@ -724,12 +724,14 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; }
 
   /* Sharp foreground layer (100% visible) */
   .banner-section::after, #final-image::after {
-    content: ''; position: absolute; inset: 0; z-index: -1;
+    content: ''; position: absolute; inset: 0; z-index: 2;
     background-image: inherit;
     background-size: contain !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
   }
+  
+  .scroll-cue { z-index: 5 !important; }
 
   /* Smooth sliding out from behind the image vertically */
   [data-direction="left"].card-open  .photo-frame,
