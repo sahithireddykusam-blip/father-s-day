@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A tribute to the world's greatest father. A digital memory book crafted with love. Happy Father's Day, Nanna.">
+    <meta name="theme-color" content="#1a0810">
+    <title>For Nanna — A Father's Day Tribute</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Page Progress Bar -->
+    <div class="progress-bar" id="progress-bar"></div>
+
+    <!-- Top Navigation Bar -->
+    <header class="site-header" id="site-header">
+        <div class="header-logo">
+            <span class="logo-script">For Nanna</span>
+            <span class="logo-tagline">A Father's Day Tribute</span>
+        </div>
+        <button id="music-toggle" class="music-btn" aria-label="Toggle Music">
+            <span class="music-icon-bars">
+                <span class="bar b1"></span>
+                <span class="bar b2"></span>
+                <span class="bar b3"></span>
+                <span class="bar b4"></span>
+            </span>
+        </button>
+        <!-- <audio id="bg-music" src="your-music-file.mp3" loop></audio> -->
+    </header>
+
+    <!-- Floating Hearts Container -->
+    <div id="hearts-container" class="hearts-container" aria-hidden="true"></div>
+
+    <!-- Sidebar Dot Navigation -->
+    <nav class="side-nav" id="side-nav" aria-label="Page navigation"></nav>
+
+    <!-- Main Scroll Container -->
+    <main class="snap-container" id="snap-container">
+
+        <!-- ═══════════════════════════════════════════════
+             SECTION 1 — TEXT HERO (no image)
+        ═══════════════════════════════════════════════ -->
+        <section class="section intro-section" id="intro" data-title="Welcome">
+            <!-- Animated grain canvas overlay -->
+            <div class="grain-overlay" aria-hidden="true"></div>
+            <!-- Radial light bloom -->
+            <div class="bloom" aria-hidden="true"></div>
+
+            <div class="intro-content">
+                <!-- Top ornament -->
+                <div class="ornament" aria-hidden="true">
+                    <svg viewBox="0 0 320 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0" y1="14" x2="118" y2="14" stroke="rgba(232,140,165,0.35)" stroke-width="0.8"/>
+                        <circle cx="136" cy="14" r="2.5" fill="rgba(232,140,165,0.55)"/>
+                        <circle cx="160" cy="14" r="5"   fill="none" stroke="rgba(232,140,165,0.50)" stroke-width="1.2"/>
+                        <circle cx="160" cy="14" r="2"   fill="rgba(232,140,165,0.70)"/>
+                        <circle cx="184" cy="14" r="2.5" fill="rgba(232,140,165,0.55)"/>
+                        <line x1="202" y1="14" x2="320" y2="14" stroke="rgba(232,140,165,0.35)" stroke-width="0.8"/>
+                    </svg>
+                </div>
+
+                <p class="intro-eyebrow">Father's Day · 2026</p>
+
+                <h1 class="intro-title">
+                    <span class="intro-line-sub">A Memory Book</span>
+                    <span class="intro-line-main">For My Nanna</span>
+                </h1>
+
+                <p class="intro-subtitle">Twelve moments. A lifetime of love.</p>
+
+                <!-- Bottom ornament -->
+                <div class="ornament" aria-hidden="true">
+                    <svg viewBox="0 0 320 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0" y1="14" x2="118" y2="14" stroke="rgba(232,140,165,0.35)" stroke-width="0.8"/>
+                        <circle cx="136" cy="14" r="2.5" fill="rgba(232,140,165,0.55)"/>
+                        <circle cx="160" cy="14" r="5"   fill="none" stroke="rgba(232,140,165,0.50)" stroke-width="1.2"/>
+                        <circle cx="160" cy="14" r="2"   fill="rgba(232,140,165,0.70)"/>
+                        <circle cx="184" cy="14" r="2.5" fill="rgba(232,140,165,0.55)"/>
+                        <line x1="202" y1="14" x2="320" y2="14" stroke="rgba(232,140,165,0.35)" stroke-width="0.8"/>
+                    </svg>
+                </div>
+
+                <div class="intro-stats">
+                    <div class="stat">
+                        <span class="stat-num">12</span>
+                        <span class="stat-label">Memories</span>
+                    </div>
+                    <div class="stat-sep"></div>
+                    <div class="stat">
+                        <span class="stat-num">∞</span>
+                        <span class="stat-label">Love</span>
+                    </div>
+                    <div class="stat-sep"></div>
+                    <div class="stat">
+                        <span class="stat-num">01</span>
+                        <span class="stat-label">Nanna</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-cue" id="scroll-indicator">
+                <span class="scroll-cue-line"></span>
+                <span class="scroll-cue-label">Begin</span>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════
+             SECTION 2 — PURE BANNER IMAGE (no text)
+        ═══════════════════════════════════════════════ -->
+        <section class="section banner-section" id="banner" data-title="Banner">
+            <div class="banner-vignette" aria-hidden="true"></div>
+            <div class="banner-scroll-cue">
+                <span class="bsc-line"></span>
+                <span class="bsc-label">Our Story</span>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════
+             MEMORY SECTIONS 1–12
+        ═══════════════════════════════════════════════ -->
+
+        <section class="section memory-section" id="memory-1" data-direction="left" data-title="My First Hero" data-num="01">
+            <div class="section-bg"></div>
+            <div class="memory-layout">
+                <div class="photo-frame" data-tilt="-2">
+                    <div class="photo-inner"><img src="1.jpeg" alt="My First Hero" loading="lazy"></div>
+                    <div class="photo-label"><span class="label-script">My First Hero</span></div>
+                    <div class="tap-hint">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M15 3l6 6M9 21l-6-6M3 9l6-6M21 15l-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        <span>Tap to open</span>
+                    </div>
+                </div>
+                <div class="memory-card">
+                    <button class="close-btn" aria-label="Close">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    </button>
+                    <div class="card-body">
+                        <span class="card-num">01</span>
+                        <span class="card-category">Greatest Blessing</span>
+                        <h2 class="card-heading">My First Hero</h2>
+                        <div class="card-rule"></div>
+                        <p class="card-text">Nanna, before I knew the meaning of strength, I saw it in you. You protected me, guided me, and loved me unconditionally. You were my first hero and always will be.</p>
+                        <div class="card-foot">
+                            <button class="love-btn" aria-label="Send Love">
+                                <svg class="love-svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5 2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53L12 21.35z"/></svg>
+                                <span class="love-count">0</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section memory-section" id="memory-2" data-direction="right" data-title="Tiny Hands" data-num="02">
+            <div class="section-bg"></div>
+            <div class="memory-layout">
+                <div class="photo-frame" data-tilt="2">
+                    <div class="photo-inner"><img src="2.jpeg" alt="Tiny Hands, Big Love" loading="lazy"></div>
+                    <div class="photo-label"><span class="label-script">Tiny Hands, Big Love</span></div>
+                    <div class="tap-hint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M15 3l6 6M9 21l-6-6M3 9l6-6M21 15l-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>Tap to open</span></div>
+                </div>
+                <div class="memory-card">
+                    <button class="close-btn" aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+                    <div class="card-body">
+                        <span class="card-num">02</span>
+                        <span class="card-category">Endless Warmth</span>
+                        <h2 class="card-heading">Tiny Hands, Big Love</h2>
+                        <div class="card-rule"></div>
+                        <p class="card-text">The little hand that once held your finger has grown, but the comfort I find in your presence remains exactly the same.</p>
+                        <div class="card-foot"><button class="love-btn" aria-label="Send Love"><svg class="love-svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5 2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53L12 21.35z"/></svg><span class="love-count">0</span></button></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section memory-section" id="memory-3" data-direction="left" data-title="Biggest Supporter" data-num="03">
+            <div class="section-bg"></div>
+            <div class="memory-layout">
+                <div class="photo-frame" data-tilt="-1.5">
+                    <div class="photo-inner"><img src="3.jpeg" alt="My Biggest Supporter" loading="lazy"></div>
+                    <div class="photo-label"><span class="label-script">My Biggest Supporter</span></div>
+                    <div class="tap-hint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M15 3l6 6M9 21l-6-6M3 9l6-6M21 15l-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>Tap to open</span></div>
+                </div>
+                <div class="memory-card">
+                    <button class="close-btn" aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+                    <div class="card-body">
+                        <span class="card-num">03</span>
+                        <span class="card-category">Believing in Me</span>
+                        <h2 class="card-heading">My Biggest Supporter</h2>
+                        <div class="card-rule"></div>
+                        <p class="card-text">Every dream I dared to dream became possible because you believed in me even before I believed in myself.</p>
+                        <div class="card-foot"><button class="love-btn" aria-label="Send Love"><svg class="love-svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5 2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53L12 21.35z"/></svg><span class="love-count">0</span></button></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section memory-section" id="memory-4" data-direction="right" data-title="Silent Sacrifices" data-num="04">
+            <div class="section-bg"></div>
+            <div class="memory-layout">
+                <div class="photo-frame" data-tilt="1.8">
+                    <div class="photo-inner"><img src="4.jpeg" alt="The Silent Sacrifices" loading="lazy"></div>
+                    <div class="photo-label"><span class="label-script">The Silent Sacrifices</span></div>
+                    <div class="tap-hint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M15 3l6 6M9 21l-6-6M3 9l6-6M21 15l-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>Tap to open</span></div>
+                </div>
+                <div class="memory-card">
+                    <button class="close-btn" aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+                    <div class="card-body">
+                        <span class="card-num">04</span>
+                        <span class="card-category">Unseen Efforts</span>
+                        <h2 class="card-heading">The Silent Sacrifices</h2>
+                        <div class="card-rule"></div>
+                        <p class="card-text">Many sacrifices happen quietly. Thank you for every sleepless night, every worry, and every effort made just to see me smile.</p>
+                        <div class="card-foot"><button class="love-btn" aria-label="Send Love"><svg class="love-svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5 2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53L12 21.35z"/></svg><span class="love-count">0</span></button></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section memory-section" id="memory-5" data-direction="left" data-title="Lessons in Life" data-num="05">
+            <div class="section-bg"></div>
+            <div class="memory-layout">
+                <div class="photo-frame" data-tilt="-2.2">
+                    <div class="photo-inner"><img src="5.jpeg" alt="Lessons Beyond Books" loading="lazy"></div>
+                    <div class="photo-label"><span class="label-script">Lessons Beyond Books</span></div>
+                    <div class="tap-hint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M15 3l6 6M9 21l-6-6M3 9l6-6M21 15l-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>Tap to open</span></div>
+                </div>
+                <div class="memory-card">
+                    <button class="close-btn" aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+                    <div class="card-body">
+                        <span class="card-num">05</span>
+                        <span class="card-category">Golden Wisdom</span>
+                        <h2 class="card-heading">Lessons Beyond Books</h2>
+                        <div class="card-rule"></div>
+                        <p class="card-text">You taught me kindness, honesty, patience, and courage. These lessons are treasures that will stay with me forever.</p>
+                        <div class="card-foot"><button class="love-btn" aria-label="Send Love"><svg class="love-svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5 2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53L12 21.35z"/></svg><span class="love-count">0</span></button></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section memory-section" id="memory-6" data-direction="right" data-title="Every Step" data-num="06">
+            <div class="section-bg"></div>
+            <div class="memory-layout">
+                <div class="photo-frame" data-tilt="1.5">
+                    <div class="photo-inner"><img src="6.jpeg" alt="Every Step Beside Me" loading="lazy"></div>
+                    <div class="photo-label"><span class="label-script">Every Step Beside Me</span></div>
+                    <div class="tap-hint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M15 3l6 6M9 21l-6-6M3 9l6-6M21 15l-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>Tap to open</span></div>
+                </div>
+                <div class="memory-card">
+                    <button class="close-btn" aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+                    <div class="card-body">
+                        <span class="card-num">06</span>
+                        <span class="card-category">Unconditional Support</span>
+                        <h2 class="card-heading">Every Step Beside Me</h2>
+                        <div class="card-rule"></div>
+                        <p class="card-text">Whether I succeeded or failed, you were always there. Your support never depended on the outcome.</p>
+                        <div class="card-foot"><button class="love-btn" aria-label="Send Love"><svg class="love-svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5 2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53L12 21.35z"/></svg><span class="love-count">0</span></button></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section memory-section" id="memory-7" data-direction="left" data-title="A Lifetime of Memories" data-num="07">
+            <div class="section-bg"></div>
+            <div class="memory-layout">
+                <div class="photo-frame" data-tilt="-1.8">
+                    <div class="photo-inner"><img src="7.jpeg" alt="A Lifetime of Memories" loading="lazy"></div>
+                    <div class="photo-label"><span class="label-script">A Lifetime of Memories</span></div>
+                    <div class="tap-hint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M15 3l6 6M9 21l-6-6M3 9l6-6M21 15l-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>Tap to open</span></div>
+                </div>
+                <div class="memory-card">
+                    <button class="close-btn" aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+                    <div class="card-body">
+                        <span class="card-num">07</span>
+                        <span class="card-category">Cherished Moments</span>
+                        <h2 class="card-heading">A Lifetime of Memories</h2>
+                        <div class="card-rule"></div>
+                        <p class="card-text">Every laugh, every trip, every conversation has become a beautiful memory that I cherish deeply.</p>
+                        <div class="card-foot"><button class="love-btn" aria-label="Send Love"><svg class="love-svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5 2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53L12 21.35z"/></svg><span class="love-count">0</span></button></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section memory-section" id="memory-8" data-direction="right" data-title="My Safe Place" data-num="08">
+            <div class="section-bg"></div>
+            <div class="memory-layout">
+                <div class="photo-frame" data-tilt="2.1">
+                    <div class="photo-inner"><img src="8.jpeg" alt="My Safe Place" loading="lazy"></div>
+                    <div class="photo-label"><span class="label-script">My Safe Place</span></div>
+                    <div class="tap-hint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M15 3l6 6M9 21l-6-6M3 9l6-6M21 15l-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>Tap to open</span></div>
+                </div>
+                <div class="memory-card">
+                    <button class="close-btn" aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+                    <div class="card-body">
+                        <span class="card-num">08</span>
+                        <span class="card-category">Warm Shelter</span>
+                        <h2 class="card-heading">My Safe Place</h2>
+                        <div class="card-rule"></div>
+                        <p class="card-text">No matter how difficult life becomes, your presence gives me comfort. Home has always felt like wherever you are.</p>
+                        <div class="card-foot"><button class="love-btn" aria-label="Send Love"><svg class="love-svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5 2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53L12 21.35z"/></svg><span class="love-count">0</span></button></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section memory-section" id="memory-9" data-direction="left" data-title="The Man I Admire" data-num="09">
+            <div class="section-bg"></div>
+            <div class="memory-layout">
+                <div class="photo-frame" data-tilt="-1.6">
+                    <div class="photo-inner"><img src="9.jpeg" alt="The Man I Admire" loading="lazy"></div>
+                    <div class="photo-label"><span class="label-script">The Man I Admire</span></div>
+                    <div class="tap-hint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M15 3l6 6M9 21l-6-6M3 9l6-6M21 15l-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>Tap to open</span></div>
+                </div>
+                <div class="memory-card">
+                    <button class="close-btn" aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+                    <div class="card-body">
+                        <span class="card-num">09</span>
+                        <span class="card-category">Role Model</span>
+                        <h2 class="card-heading">The Man I Admire</h2>
+                        <div class="card-rule"></div>
+                        <p class="card-text">Your dedication, resilience, and kindness inspire me every day. I hope to carry these qualities throughout my life.</p>
+                        <div class="card-foot"><button class="love-btn" aria-label="Send Love"><svg class="love-svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5 2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53L12 21.35z"/></svg><span class="love-count">0</span></button></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section memory-section" id="memory-10" data-direction="right" data-title="Every Season" data-num="10">
+            <div class="section-bg"></div>
+            <div class="memory-layout">
+                <div class="photo-frame" data-tilt="1.9">
+                    <div class="photo-inner"><img src="10.jpeg" alt="Through Every Season" loading="lazy"></div>
+                    <div class="photo-label"><span class="label-script">Through Every Season</span></div>
+                    <div class="tap-hint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M15 3l6 6M9 21l-6-6M3 9l6-6M21 15l-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>Tap to open</span></div>
+                </div>
+                <div class="memory-card">
+                    <button class="close-btn" aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+                    <div class="card-body">
+                        <span class="card-num">10</span>
+                        <span class="card-category">Constant Love</span>
+                        <h2 class="card-heading">Through Every Season</h2>
+                        <div class="card-rule"></div>
+                        <p class="card-text">From childhood to today, your love has remained constant through every phase and season of my life.</p>
+                        <div class="card-foot"><button class="love-btn" aria-label="Send Love"><svg class="love-svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5 2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53L12 21.35z"/></svg><span class="love-count">0</span></button></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section memory-section" id="memory-11" data-direction="left" data-title="Thank You" data-num="11">
+            <div class="section-bg"></div>
+            <div class="memory-layout">
+                <div class="photo-frame" data-tilt="-2.0">
+                    <div class="photo-inner"><img src="11.jpeg" alt="Thank You For Everything" loading="lazy"></div>
+                    <div class="photo-label"><span class="label-script">Thank You For Everything</span></div>
+                    <div class="tap-hint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M15 3l6 6M9 21l-6-6M3 9l6-6M21 15l-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>Tap to open</span></div>
+                </div>
+                <div class="memory-card">
+                    <button class="close-btn" aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+                    <div class="card-body">
+                        <span class="card-num">11</span>
+                        <span class="card-category">Infinite Gratitude</span>
+                        <h2 class="card-heading">Thank You For Everything</h2>
+                        <div class="card-rule"></div>
+                        <p class="card-text">Thank you for every sacrifice, every lesson, every smile, and every moment of care that shaped me into who I am today.</p>
+                        <div class="card-foot"><button class="love-btn" aria-label="Send Love"><svg class="love-svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5 2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53L12 21.35z"/></svg><span class="love-count">0</span></button></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section memory-section" id="memory-12" data-direction="right" data-title="Forever Grateful" data-num="12">
+            <div class="section-bg"></div>
+            <div class="memory-layout">
+                <div class="photo-frame" data-tilt="1.7">
+                    <div class="photo-inner"><img src="12.jpeg" alt="Forever Grateful" loading="lazy"></div>
+                    <div class="photo-label"><span class="label-script">Forever Grateful</span></div>
+                    <div class="tap-hint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M15 3l6 6M9 21l-6-6M3 9l6-6M21 15l-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>Tap to open</span></div>
+                </div>
+                <div class="memory-card">
+                    <button class="close-btn" aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+                    <div class="card-body">
+                        <span class="card-num">12</span>
+                        <span class="card-category">Proud Daughter</span>
+                        <h2 class="card-heading">Forever Grateful</h2>
+                        <div class="card-rule"></div>
+                        <p class="card-text">No words can truly express my gratitude. I am blessed to be your daughter and proud to call you my father.</p>
+                        <div class="card-foot"><button class="love-btn" aria-label="Send Love"><svg class="love-svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5 2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53L12 21.35z"/></svg><span class="love-count">0</span></button></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════
+             FINAL SECTION 1 — PURE IMAGE
+        ═══════════════════════════════════════════════ -->
+        <section class="section banner-section" id="final-image" data-title="Together">
+            <div class="banner-vignette" aria-hidden="true"></div>
+            <div class="banner-scroll-cue">
+                <span class="bsc-line"></span>
+                <span class="bsc-label">Wishes</span>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════
+             FINAL SECTION 2 — TEXT
+        ═══════════════════════════════════════════════ -->
+        <section class="section final-text-section" id="final-text" data-title="Wishes">
+            <div class="final-text-panel">
+                <div class="final-content">
+                    <div class="final-ornament" aria-hidden="true">
+                        <svg viewBox="0 0 240 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="200">
+                            <line x1="0" y1="12" x2="84" y2="12" stroke="rgba(232,140,165,0.35)" stroke-width="0.8"/>
+                            <circle cx="98"  cy="12" r="2.5" fill="rgba(232,140,165,0.55)"/>
+                            <circle cx="114" cy="12" r="4.5" fill="none" stroke="rgba(232,140,165,0.45)" stroke-width="1.2"/>
+                            <circle cx="114" cy="12" r="1.8" fill="rgba(232,140,165,0.70)"/>
+                            <circle cx="130" cy="12" r="2.5" fill="rgba(232,140,165,0.55)"/>
+                            <line x1="144" y1="12" x2="240" y2="12" stroke="rgba(232,140,165,0.35)" stroke-width="0.8"/>
+                        </svg>
+                    </div>
+
+                    <p class="final-eyebrow">Happy Father's Day</p>
+                    <h2 class="final-title">Nanna</h2>
+
+                    <div class="final-poem">
+                        <p>You are my first hero,</p>
+                        <p>my greatest blessing,</p>
+                        <p>my strongest support,</p>
+                        <p>and my forever inspiration.</p>
+                    </div>
+
+                    <p class="final-thanks">Thank you for everything.</p>
+                    <p class="final-signature">Love You Always</p>
+                </div>
+
+                <footer class="footer">
+                    <span>Made with love for the Best Nanna in the World</span>
+                    <span class="footer-dot">·</span>
+                    <span>Father's Day 2026</span>
+                </footer>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
