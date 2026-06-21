@@ -708,18 +708,27 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; }
   }
 
   .banner-section, #final-image {
-    background-size: contain !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
+    /* Hide the base background render so pseudo-elements can layer it correctly */
+    background-size: 0 0 !important; 
     z-index: 1;
   }
   
+  /* Blurred background layer */
   .banner-section::before, #final-image::before {
-    content: ''; position: absolute; inset: -10%; z-index: -1;
+    content: ''; position: absolute; inset: -10%; z-index: -2;
     background-image: inherit; 
     background-size: cover !important;
     background-position: center !important;
     filter: blur(20px) brightness(0.4);
+  }
+
+  /* Sharp foreground layer (100% visible) */
+  .banner-section::after, #final-image::after {
+    content: ''; position: absolute; inset: 0; z-index: -1;
+    background-image: inherit;
+    background-size: contain !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
   }
 
   /* Smooth sliding out from behind the image vertically */
