@@ -686,12 +686,12 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; }
   .memory-layout {
     flex-direction:column; padding:20px;
     justify-content:center; align-items:center;
-    gap:16px;
   }
   .photo-frame {
     position:relative; width:255px; height:344px;
     padding:12px 12px 50px;
     transition:all .75s var(--ease-expo);
+    z-index: 5;
   }
   .photo-label { height:50px; }
   .label-script { font-size:1.4rem; }
@@ -699,38 +699,40 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; }
 
   .memory-card {
     position:absolute; width:92%; max-width:375px;
-    bottom:auto; left:auto;
-    transform:none;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
     padding:20px; max-height:55vh; overflow-y:auto;
-    transition:all .5s var(--ease-expo);
+    transition:all .75s var(--ease-expo);
+    z-index: 3;
+    opacity:0; visibility:hidden; pointer-events:none;
   }
 
   .banner-section, #final-image {
     background-size: contain !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
+    z-index: 1;
+  }
+  
+  .banner-section::before, #final-image::before {
+    content: ''; position: absolute; inset: -10%; z-index: -1;
+    background-image: inherit; 
+    background-size: cover !important;
+    background-position: center !important;
+    filter: blur(20px) brightness(0.4);
   }
 
-  /* When open on mobile: shrink image, put card in flex flow */
+  /* Smooth sliding out from behind the image vertically */
   [data-direction="left"].card-open  .photo-frame,
   [data-direction="right"].card-open .photo-frame {
-    width:190px; height:256px;
-    padding:8px 8px 38px;
-    transform:rotate(0deg) !important; 
-  }
-  [data-direction="left"].card-open .photo-label,
-  [data-direction="right"].card-open .photo-label {
-    height:38px;
-  }
-  [data-direction="left"].card-open .label-script,
-  [data-direction="right"].card-open .label-script {
-    font-size:1.15rem;
+    transform: translateY(-24vh) scale(0.8) rotate(0deg) !important;
   }
 
   [data-direction="left"].card-open  .memory-card,
   [data-direction="right"].card-open .memory-card {
-    position:relative;
-    transform:none;
+    /* Frame height is 344px * 0.8 = 275px. Center to bottom is 137.5px. Gap 16px. */
+    top: calc(50% - 24vh + 154px);
+    transform: translateX(-50%) scale(1);
     opacity:1; visibility:visible; pointer-events:auto; 
   }
 
@@ -751,13 +753,19 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; }
   .label-script { font-size:1.18rem; }
   .tap-hint { bottom:52px; font-size:.60rem; padding:5px 12px; }
   
+  .memory-card { padding:16px 14px; max-height:58vh; }
+
   [data-direction="left"].card-open  .photo-frame,
   [data-direction="right"].card-open .photo-frame {
-    width:170px; height:230px; padding:6px 6px 34px;
+    transform: translateY(-22vh) scale(0.8) rotate(0deg) !important;
   }
 
-  .memory-card { padding:16px 14px; max-height:58vh; }
-  .memory-layout { gap: 12px; }
+  [data-direction="left"].card-open  .memory-card,
+  [data-direction="right"].card-open .memory-card {
+    /* Frame height is 298px * 0.8 = 238px. Center to bottom is 119px. Gap 12px. */
+    top: calc(50% - 22vh + 131px);
+    transform: translateX(-50%) scale(1);
+  }
 
   .intro-stats { gap:14px; }
   .stat-sep    { height:22px; }
